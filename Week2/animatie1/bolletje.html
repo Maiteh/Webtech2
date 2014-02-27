@@ -1,15 +1,24 @@
-<!doctype html>
-<html lang="nl">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Bolletje</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	
+	<title>CSS3 Animaties</title>
+	<link  rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+    	$( document ).ready(function() {
+       	 	$(".bolletje").click(addClasses);
+    	});
+		function addClasses(){
+			$("#rood").addClass("moveRood");
+    		$("#groen").addClass("moveGroen");
+    		$("#geel").addClass("moveGeel");
+      	}
+    </script>
+
 
 </head>
 <body>
-	<div class="blauw"></div>
-	<div class="rood"></div>
-	<div class="geel"></div>
+	<div id="rood" class="bolletje"></div>
+	<div id="groen" class="bolletje"></div>
+	<div id="geel" class="bolletje"></div>
 </body>
 </html>

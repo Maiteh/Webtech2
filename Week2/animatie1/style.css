@@ -1,29 +1,26 @@
-.blauw
-{
-	border-radius: 50px;
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	background-color: blue;
-}
-.geel
-{
-	border-radius: 50px;
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	background-color: yellow;
-	transition: -webkit-transform: 1s;
-}
-.rood
-{
-	border-radius: 50px;
-	position: absolute;
-	width: 20px;
-	height: 20px;
+#rood{
 	background-color: red;
 }
-.geel:hover
-{
-	-webkit-transform: translateY(50px);
+#groen{
+	background-color: green;
 }
+#geel{
+	background-color: yellow;
+}
+.bolletje{
+	border-radius:50px;
+	position: absolute;
+	width:20px;
+	height: 20px;
+	transition: -webkit-transform 1s;
+}
+.moveRood{
+	-webkit-transform: translateX(125px);
+}
+.moveGroen{
+		-webkit-transform: translateY(125px)
+}
+.moveGeel{
+		-webkit-transform: translateY(125px) translateX(125px) 
+}
+
