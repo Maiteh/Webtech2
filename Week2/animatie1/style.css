@@ -1,4 +1,4 @@
-#blauw
+.blauw
 {
 	border-radius: 50px;
 	position: absolute;
@@ -6,19 +6,24 @@
 	height: 20px;
 	background-color: blue;
 }
-#geel
+.geel
 {
 	border-radius: 50px;
 	position: absolute;
 	width: 20px;
 	height: 20px;
 	background-color: yellow;
+	transition: -webkit-transform: 1s;
 }
-#rood
+.rood
 {
 	border-radius: 50px;
 	position: absolute;
 	width: 20px;
 	height: 20px;
 	background-color: red;
+}
+.geel:hover
+{
+	-webkit-transform: translateY(50px);
 }
