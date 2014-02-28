@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>oefening1</title>
+</head>
+<body>
+	<div class="container">
+		<h1>IMDo App</h1>
+		<ul>
+			<li id="todo-item1">Learn about GIT</li>
+			<li id="todo-item2" class="todo">Experiment whit CSS animation</li>
+			<li id="todo-item3" class="todo">Become a Javascript ninja</li>
+		</ul>
+	</div>
+
+	<script>
+		// mark list item as done ( line-trough and gray)
+
+		// - uitbreiding deel 2 3e - oplossing
+		//FRAMEWORK
+		var IMDelement = function(element)
+		{
+			this.element = element;
+			// if else is te lang gecodeerd 
+			/*if(element.length > 1)
+			{
+				var isarray = true;
+			}else{
+				var isarray = false;
+			}*/
+			// dit is kortere versie voor if else statement te coderen.
+			this.isArray=(element.length > 1) ? true : false;
+		}
+
+		IMDelement.prototype.color = function(p_color)
+		{
+			if(this.isArray)
+			{
+				console.log("we zitten met een array");
+				for(var i=0, l=this.element.length; i<l; i++) 
+				// i<this.element.length is niet goed, dan gaat hij elke keer kijken hoeveel lang het is, met 2e var "l" is het beter
+				{
+					this.element[i].style['color'] = p_color;
+				}
+			}else
+			{
+				console.log("1 elementje");
+				this.element.style['color'] = p_color;
+			}
+			
+		}
+
+		var $ = function(p_element)
+		{
+			var firstCharacter = p_element.charAt(0); //eerste character uitlezen
+			var result;	
+
+			switch(firstCharacter){
+				case "#":
+					var idToSelect = p_element.substring(1, p_element.length);
+											// beginnen bij, tot , lengte
+					console.log(idToSelect);
+					element = document.getElementById(idToSelect);
+								// document.getElementeById("#todo-item1")
+					var result = new IMDelement(element);
+				break;
+
+				case".":
+					var classToSelect = p_element.substring(1, p_element.length);
+					var elements = document.getElementsByClassName(classToSelect);
+					var result = new IMDelement(elements);
+				break;
+			}
+			return result
+		}
+
+		//EIGEN CODE
+		$('#todo-item1').color("yellow");
+		//$ kan ook grab, hij grijpt een element
+		$('.todo').color("red").makeBold();
+
+		
+	</script>
+
+</body>
+</html>
