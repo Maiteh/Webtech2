@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>todo list challenge</title>
+
+
+<style type="text/css">
+#container
+{
+    width: 500px;
+ 
+    margin-left:auto;
+    margin-right:auto;
+}
+h1
+{
+    text-align: center;
+}
+
+
+ul
+{
+    padding-left: 0px;
+}
+
+
+li
+{
+	border-radius:15px;
+    list-style-type: none;
+	border-radius:	5px;
+	text-align:center;
+	border-bottom:1px solid black;
+}
+
+
+.belangrijk
+{
+    background-color: red;
+}
+
+
+.gewoon
+{
+    background-color:orange;    
+}
+
+
+.laag
+{
+    background-color: cyan;
+}
+
+
+.gedaan
+{
+    text-decoration: line-through;
+    background-color: green;
+	color:white;
+}
+
+
+</style>
+</head>
+<body>
+	<div id="container">
+
+
+		<h1>Todo App</h1>
+
+
+		<ul>
+            <li class="gewoon">1ste taak</li>
+			<li class="laag">2de taak</li>
+			<li class="gewoon">3de taak</li>
+			<li class="belangrijk">4de taak</li>
+
+
+		</ul>
+
+
+
+
+
+
+	</div>
+
+
+<script>
+
+
+var IMDelement = function (element) 
+    {
+        this.element = element;
+        this.isArray = (element.length > 1) ? true : false;
+    }
+
+
+IMDelement.prototype.color = function (p_color) 
+    {
+        if (this.isArray) 
+        {
+		for (var i = 0, l = this.element.length; i < l; i++) 
+		{
+		this.element[i].style['color'] = p_color;
+		}
+		} 
+        else 
+		{
+		this.element.style['color'] = p_color;
+		}
+        return this.element;
+    }
+
+
+IMDelement.prototype.klastoevoegen = function (p_class) 
+    {   
+        if (this.isArray) 
+		{
+		for (var i = 0, l = this.element.length; i < l; i++) 
+		{
+		this.element[i].className = p_class;
+		}
+		} 
+        else 
+		{
+		this.element.className = p_class;
+		}
+        return this.element;
+    }
+
+
+IMDelement.prototype.aanduiden = function (action) 
+    {
+        if (this.isArray) 
+		{
+		for (var i = 0, l = this.element.length; i < l; i++) 
+		{
+		this.element[i].addEventListener('click', action);
+		}
+		} 
+        else 
+		{
+		this.element.addEventListener('click', action);
+		}
+    }
+
+
+var $ = function (p_element) 
+    {
+        if (typeof (p_element) == "object") 
+        {
+            return new IMDelement(p_element);
+        }
+   
+    var eerstekarakter = p_element.charAt(0);
+    var result;
+
+
+    switch (eerstekarakter) 
+    {
+	case "#":
+		var idToSelect = p_element.substring(1, p_element.length);
+		var element = document.getElementById(idToSelect);
+		result = new IMDelement(element);
+		break;
+
+
+	case ".":
+		var classToSelect = p_element.substring(1, p_element.length);
+		var elements = document.getElementsByClassName(classToSelect);
+		result = new IMDelement(elements);
+		break;
+
+
+	default:
+		var elements = document.getElementsByTagName(p_element);
+		result = new IMDelement(elements);
+		break;
+    }
+    return result;
+	};
+
+
+$("li").aanduiden(function ()
+    {
+        $(this).klastoevoegen("gedaan");
+    });
+	</script>
+
+
+</body>
+</html>
+

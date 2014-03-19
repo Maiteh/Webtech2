@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>IMDo App</title>
+</head>
+<link rel="stylesheet" href="css/screen.css">
+<body>
+
+
+<div class="wrapper">
+	<h1>IMDo App</h1>
+
+
+	<ul id="todo-list">
+		<li id="todo-add-item"><input type="text" id="add-item-text"</li>
+		<li id="todo-item1" class="prior-high">Learn about GIT</li>
+		<li id="todo-item2" class="prior-high">Lean about Prototypes</li>
+		<li id="todo-item3" class="prior-medium">Experiment with css-animations</li>
+		<li id="todo-item4" class="prior-low">Become a Javascript ninja</li>
+	</ul>
+</div>
+
+
+	<script type="text/javascript">
+
+
+		var NEWelement = function(element)
+		{
+			this.element = element;
+			this.isArray = (element.length > 1 ) ? true : false;
+		}
+
+
+		NEWelement.prototype.addClass = function(p_class)
+		{
+			if(this.isArray) //meerdere elementen
+			{
+				for (var i = 0, j = this.element.length; i < j; i++)
+				{
+					this.element[i].className = this.element[i].className + " " + p_class;
+				};
+			}
+			else
+			{
+					this.element.className = this.element.className + " " + p_class;
+			}
+			return this;
+		}
+
+
+		NEWelement.prototype.click = function(p_click)
+		{
+			if(this.isArray)
+			{
+				for(var i=0, j=this.element.length; i<j; i++)
+				{
+					this.element[i].addEventListener('click', p_click);
+					console.log(this.element[i]);
+				}
+			}
+			else
+			{
+				this.element.addEventListener('click', p_click);
+			}
+			return this;
+		}
+
+
+		var $ = function(p_element)
+		{
+			var result;
+			var firstChar = p_element.charAt(0);
+
+
+			switch(firstChar)
+			{
+				case "#":
+					var idSelect = p_element.substring(1,p_element.length);
+					var element = document.getElementById(idSelect);
+					break;
+
+
+				case ".":
+					var classSelect = p_element.substring(1,p_element.length);
+					var element = document.getElementsByClassName(classSelect);
+					break;
+
+
+				default:
+					var element = document.getElementsByTagName(p_element);
+					break;
+			}
+			result =  new NEWelement(element);
+			return result;
+		}
+
+
+		//mark class items (prior high in this case) as done
+		//$(".prior-high").addClass("done");
+
+
+		//mark id items (todo-item1 in this case) as done
+		// $("#todo-item1").addClass("done");
+
+
+		//mark all list items as done
+		//$("li").addClass("done");
+
+
+
+
+		// -BONUS- mark list items when you click them
+		$("li").click(function(){
+			new NEWelement(this).addClass("done");
+		});
+
+
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+body
+{
+    color: #fff;
+}
+
+
+#container
+{
+    width: 500px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+
+h1
+{
+    text-align: center;
+    color: #676767;
+    font-family: Helvetica;
+}
+
+
+ul
+{
+    padding-left: 0px;
+}
+
+
+li
+{
+    list-style-type: none;
+    font-family: Helvetica;
+    background-color: #a4779b;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+
+.priorHigh
+{
+    background-color: #d34747;
+}
+
+
+.priorMed
+{
+    background-color:#fa8843;    
+}
+
+
+.priorLow
+{
+    background-color: #a26127;
+}
+
+
+.todo
+{
+    background-color: #4dc7c3;
+}
+
+
+input[type="button"]
+{
+    width:500px;
+    border-radius: 6px;
+    border:none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #f26868;
+    color:white;
+    font-family: Helvetica;
+    font-size: 18px;
+}
+
+
+.done
+{
+    text-decoration: line-through;
+    background-color: #4ece72;
+}
+
