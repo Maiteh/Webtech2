@@ -12,7 +12,7 @@ if(navigator.geolocation){
 	alert('No geolocation available in your browser!');
 }
 function error(){
-	alert('No location found!');
+	alert('I could not find your location');
 }
 function getPosition(position){
     lat = position.coords.latitude;
