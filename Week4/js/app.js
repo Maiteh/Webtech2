@@ -98,5 +98,91 @@ function loadData (){
         weatherDay = this.theWeather.daily.data[day];
         show(weatherDay);
     }
-    
+    function show(weather){
+        var day = new Date(weather.time*1000);
+        var weekdays = new Array();
+        weekdays[0] = "Sunday";
+        weekdays[1] = "Monday";
+        weekdays[2] = "Tuesday";
+        weekdays[3] = "Wednesday";
+        weekdays[4] = "Thursday";
+        weekdays[5] = "Friday";
+        weekdays[6] = "Saturday";
+
+        var months = new Array();
+        months[0] = "January";
+        months[1] = "February";
+        months[2] = "March";
+        months[3] = "April";
+        months[4] = "May";
+        months[5] = "June";
+        months[6] = "July";
+        months[7] = "August";
+        months[8] = "September";
+        months[9] = "October";
+        months[10] = "November";
+        months[11] = "December";
+
+        //console.log(weekdays[day.getDay()] + " " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear());
+        var datenow = new Date();
+        var nowtime = datenow.getHours();
+        var nowweather = this.theWeather.hourly.data[nowtime];
+        var weathernow = Math.round((nowweather.temperature-32)*5/9);
+        console.log(weathernow);
+        
+        var mintemp = Math.round((weatherDay.temperatureMin-32)*5/9);
+        var maxtemp =  Math.round((weatherDay.temperatureMax-32)*5/9);
+        $("#date").text(weekdays[day.getDay()] + " " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear());
+        $("#city").text("You are in " + city);
+        $("#tempnow").text("the temperature here is " + weathernow + "°C");
+        $("#weather").text(weatherDay.summary);
+        $("#mintemp").text(mintemp + "°C");
+        $("#maxtemp").text(maxtemp + "°C");
+        
+        var iconcode = weatherDay.icon;
+
+        getIcon(iconcode);
+    }
+
+    function getIcon(code){
+        this.skycons.remove("weatherimage");
+        switch(code){
+            case "clear-day":
+                this.skycons.add(document.getElementById("weatherimage"), Skycons.CLEAR_DAY);
+                break;
+            case "clear-night":
+                this.skycons.add(document.getElementById("weatherimage"), Skycons.CLEAR_NIGHT);
+                break;
+            case "rain":
+                skycons.add(document.getElementById("weatherimage"), Skycons.RAIN);
+                break;
+            case "snow":
+                skycons.add(document.getElementById("weatherimage"), Skycons.SNOW);
+                break;
+            case "sleet":
+                skycons.add(document.getElementById("weatherimage"), Skycons.SLEET);
+                break;
+            case "wind":
+                skycons.add(document.getElementById("weatherimage"), Skycons.WIND);
+                break;
+            case "fog":
+                skycons.add(document.getElementById("weatherimage"), Skycons.FOG);
+                break;
+            case "cloudy":
+                skycons.add(document.getElementById("weatherimage"), Skycons.CLOUDY);
+                break;
+            case "partly-cloudy-day":
+                skycons.add(document.getElementById("weatherimage"), Skycons.PARTLY_CLOUDY_DAY);
+                break;
+            case "partly-cloudy-night":
+                skycons.add(document.getElementById("weatherimage"), Skycons.PARTLY_CLOUDY_NIGHT);
+                break;
+            default:
+                skycons.add(document.getElementById("weatherimage"), Skycons.CLEAR_DAY);
+                break;
+
+         }
+          this.skycons.play();
+    }
+
 }
