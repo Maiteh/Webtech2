@@ -20,19 +20,6 @@ header
 }
 
 
-.circle
-{
-	background-color: black;
-	width: 0.24rem;
-	height: 0.24rem;
-	border-radius: 50%;
-	display: inline-block;
-	margin: 0px 2px 5px 2px;
-
-
-}
-
-
 h1
 {
 	color: black;
@@ -50,6 +37,7 @@ li
 {
 	padding: 10px 20px 10px 20px;
 	font-size: 12pt;
+	margin-bottom: 5px;
 }	
 
 
@@ -75,5 +63,6 @@ li
 .low
 {
 	background-color: yellow;
+	color: black;
 }
 

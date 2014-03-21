@@ -37,27 +37,19 @@
 
 <script type="text/javascript">
 
-    var IMDelement = function(element) //dit is een wrapper object
+    var IMDelement = function(element) 
     {
         this.element = element;
-
         this.isArray = (element.length > 1) ? true : false;
     }
 
-
-
-
     var number = 0;
-    var $ = function(p_element)//definiëren welk object het is.
-    //p_element is het element dat gecheckt wordt op #, . of gewone tags.
+    var $ = function(p_element)
     {
-
-
-        if(typeof p_element != 'object')//wanneer het element een object is
+        if(typeof p_element != 'object')
         {
             var firstChar = p_element.charAt(0);
             var result;
-
 
             switch(firstChar)
             {
@@ -67,68 +59,41 @@
                     result = new IMDelement(element);
                 break;  
 
-
                 case ".":
                     var classToSelect = p_element.substring(1, p_element.length);
                     var elements = document.getElementsByClassName(classToSelect);
                     result = new IMDelement(elements);
                 break;
 
-
-                default://= al de rest.
+                default:
                     var elements = document.getElementsByTagName(p_element);
                     result = new IMDelement(elements);
                 break;
-
-
             }
-        }
-
-
-        else
-        {
+        }else{
             return new IMDelement(p_element)
-
-
         }
         return result;
     }
 
-
     IMDelement.prototype.color = function(p_color)
     {
-
-
         if(this.isArray)
         {
             for(i=0, l=this.element.length; i<l; i++)
             {
                 this.element[i].style['color'] = p_color;
             }
-        }
-
-
-        else
-        {
+        }else{
             console.log("1 elementje");
             this.element.style['color'] = p_color;
         }
-
-
-        return this.element; //iets returnen zorgt er voor dat je functies kunt aan elkaar hangen.
-
-
+        return this.element; 
     }
-
-
-    //$(".todo").color("yellow");
-
 
     IMDelement.prototype.addClass = function(newClass)
     {
         this.element.className += ' newClass';
-
-
         if(this.isArray)
         {
             for(i=0, l=this.element.length; i<l; i++)
@@ -136,28 +101,15 @@
                 console.log("newClass");
                 this.element[i].classList.add(newClass);
             }
-        }
-
-
-        else
-        {
+        }else{
             console.log("1 elementje");
             this.element.classList.add(newClass);
-
-
         }
-
-
         return this.element;
     }
 
-
-
-
     IMDelement.prototype.click = function(p_function)
     {
-
-
         if(this.isArray)
         {
             for(i=0, l=this.element.length; i<l; i++)
@@ -165,88 +117,19 @@
                 console.log("newClass");
                 this.element[i].addEventListener("click", p_function, false);
             }
-        }
-
-
-        else
-        {
+        }else{
             console.log("1 elementje");
             this.element.addEventListener("click", p_function, false);
-
-
         }
-
-
         return this.element;
     }
-
 
     $("li").click(function(){
         $(this).addClass("done");
         console.log("click");
     });
 
-
-    /*$("li").click(function()
-    {
-        $("#todo-item1").addClass("done");
-        console.log("click");
-    });*/
-
-
-
-
-    //$("todo-item1").color("red"); --> er is geen functie color in js (enkel style.color)
-    //we gaan dit nabouwen zodat we dat op alle elementen kunnen toepassen.
-
-
-    /*HTMLElement.prototype.color = function(p_color)
-    {
-        this.style['color'] = p_color;
-    }
-
-
-    $("#todo-item1").color("red");*/
-
-
-    //nu dat we de basis functie color() hebben aangemaakt werkt het bovenstaande wel.
-    //een eigen basis functie aanmaken is gevaarlijk omdat als dit ooit algemeen ingevoegd wordt in js
-    //overschrijven we deze functie en kan het conflicten en fouten veroorzaken.
-
-
-    //uitleg objecten en protoypes
-    /*var Person = function(firstname, lastname)
-    {
-        this.firstname = firstname;
-        this.lastname = lastname;
-
-
-        this.sayName = function()
-        {
-            console.log("Hi my name is " + this.firstname);
-        }
-    }
-
-
-    var steve = new Person("Steve","Jobs");
-    var bill = new Person("Bill","Gates");
-
-
-    steve.sayName();
-    bill.sayName();*/ 
-
-
-    /*WAT MOET EEN TODO APP DOEN
-
-
-    todoitem.add
-    todoitem.click --> addClass "done".
-    na klik action*/
-
-
 </script>
-
-
 </body>
 </html>
 
