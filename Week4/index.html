@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo">Click the button to get your coordinates:</p>
+<button onclick="getLocation()">Try It</button>
+<script src="js/geoloc.js"></script>
+<script>
+$.get('https://api.forecast.io/forecast/cb15435b57fd1320d8c1795c8a7a49dc/'+ position.coords.latitude + ',' + position.coords.longitude + ',' + 24,
+function(response) {
+console.log(responseText);
+}
+</script>
+</body>
+</html>
