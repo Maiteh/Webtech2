@@ -4,3 +4,7 @@ body{
 p{
 	color: white;
 }
+canvas{
+	margin: 0 auto;
+	display:block;
+}
