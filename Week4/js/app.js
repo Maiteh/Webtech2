@@ -76,6 +76,27 @@ function check(){
         }
     }
 }
+function loadData (){
+    // var url = "https://api.forecast.io/forecast/"+this.key+"/"+this.lat+","+this.lon;
+    var url = "https://api.forecast.io/forecast/b90e2409c25c39a24e68b8dd6d219976/"+this.lat+","+this.lon;
+    console.log(url);
+    $.ajax({
+        url: url, 
+        type: "GET", 
+        dataType: "jsonp"})
 
+    .done(function(data) {
+        console.log("Great succes! *Voice of Borat*");
+        theWeather = data;
+        localStorage.setItem("weatherdata", JSON.stringify(this.theWeather));
+        localStorage.setItem("time",new Date().getTime());
 
+        weatherData(0);
+    });
+     weatherData = function(day){
+        
+        weatherDay = this.theWeather.daily.data[day];
+        show(weatherDay);
+    }
+    
 }
