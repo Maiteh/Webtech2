@@ -11,6 +11,8 @@ if(navigator.geolocation){
 }else{
 	alert('No geolocation available in your browser!');
 }
+
+
 function error(){
 	alert('I could not find your location');
 }
@@ -36,7 +38,12 @@ function getPosition(position){
       }
     });
   }
-//End location
+//End location________________________________________________________________
+
+
+
+
+
 
 // Change day
  var days = $("a");
