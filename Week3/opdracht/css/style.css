@@ -35,11 +35,8 @@ header
 
 h1
 {
-	display: inline-block;
 	color: black;
-	font-size: 1.2rem;
-	text-transform: uppercase;
-	margin: 5px 0px 5px 0px;
+	font-size: 12pt;
 }
 
 
@@ -51,9 +48,8 @@ ul
 
 li
 {
-	border-bottom: dotted 1px white;
 	padding: 10px 20px 10px 20px;
-	font-size: 1rem;
+	font-size: 12pt;
 }	
 
 
@@ -64,20 +60,20 @@ li
 }
 
 
-.prior-high
+.high
 {
-	background-color: #FF0021;
+	background-color: red;
 }
 
 
-.prior-medium
+.medium
 {
-	background-color: #FF5800;
+	background-color: orange;
 }
 
 
-.prior-low
+.low
 {
-	background-color: #00BB87;
+	background-color: yellow;
 }
 
