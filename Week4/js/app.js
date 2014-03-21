@@ -52,6 +52,8 @@ function getPosition(position){
      weatherData(day-1);
     });
   });
+
+
 // Weather
 var theWeather;
 var weatherDay
@@ -60,15 +62,10 @@ var skycons = new Skycons({"color": "white"});
 var Weather = function (lat, lon){
     this.lat = lat;
     this.lon = lon;
-    this.key = "b90e2409c25c39a24e68b8dd6d219976";
+    this.key = "3de8a44fe3a6eb3969672216283e5aeb";
     check();
 }
-/* Gebruik van localStorage: In het geheugen opslaan van data
 
-    * localStorage.setItem("NAAM", data in die naam)
-    * localStorage.getItem("NAAM")
-
-*/
 function check(){
     if(!localStorage.getItem("weatherdata")){
         // Not a localStorage
@@ -83,8 +80,8 @@ function check(){
         }
     }
 }
+
 function loadData (){
-    // var url = "https://api.forecast.io/forecast/"+this.key+"/"+this.lat+","+this.lon;
     var url = "https://api.forecast.io/forecast/b90e2409c25c39a24e68b8dd6d219976/"+this.lat+","+this.lon;
     console.log(url);
     $.ajax({
@@ -93,7 +90,7 @@ function loadData (){
         dataType: "jsonp"})
 
     .done(function(data) {
-        console.log("Great succes! *Voice of Borat*");
+        console.log("Gelukt");
         theWeather = data;
         localStorage.setItem("weatherdata", JSON.stringify(this.theWeather));
         localStorage.setItem("time",new Date().getTime());
@@ -130,7 +127,6 @@ function loadData (){
         months[10] = "November";
         months[11] = "December";
 
-        //console.log(weekdays[day.getDay()] + " " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear());
         var datenow = new Date();
         var nowtime = datenow.getHours();
         var nowweather = this.theWeather.hourly.data[nowtime];
@@ -140,8 +136,8 @@ function loadData (){
         var mintemp = Math.round((weatherDay.temperatureMin-32)*5/9);
         var maxtemp =  Math.round((weatherDay.temperatureMax-32)*5/9);
         $("#date").text(weekdays[day.getDay()] + " " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear());
-        $("#city").text("You are in " + city);
-        $("#tempnow").text("the temperature here is " + weathernow + "°C");
+        $("#city").text("Your location is near: " + city);
+        $("#tempnow").text("The current temperature is: " + weathernow + "°C");
         $("#weather").text(weatherDay.summary);
         $("#mintemp").text(mintemp + "°C");
         $("#maxtemp").text(maxtemp + "°C");
@@ -187,7 +183,6 @@ function loadData (){
             default:
                 skycons.add(document.getElementById("weatherimage"), Skycons.CLEAR_DAY);
                 break;
-
          }
           this.skycons.play();
     }
