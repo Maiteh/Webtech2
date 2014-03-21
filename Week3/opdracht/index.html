@@ -1,11 +1,14 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
 
+
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <title>TodoApp</title>
+    <title>Advanced javascript</title>
+
 
     <link rel="stylesheet" href="css/style.css" media="all"> 
+
 
 </head>
 <body>
@@ -15,24 +18,70 @@
 
 
     <header>
-        <div class="circle" ></div>
+        
         <h1>IMD App</h1>
-        <div class="circle" ></div>
+        
     </header>
 
 
     <ul>
-        <li id="item4"  class = "high" >webtech2 - lab 4</li>
-        <li id="item3"  class = "high" >webtech2 - lab 3</li>
-        <li id="item2" class="medium" >php1</li>
-        <li id="item1" class="low" >Gaan wandelen met ons juneke</li>
+        <li id="item4"  class = "high" >webtech2</li>
+        <li id="item3"  class = "high" >php</li>
+        <li id="item2" class="medium" >project2</li>
+        <li id="item1" class="low" >Gaan wandelen meet juneke</li>
     </ul>
 
 
-</div>
+</div><!-- /container -->
 
 
 <script type="text/javascript">
+
+
+    // mark list items as DONE (line-through and grey)
+    //te veel gekopieer niet efficient
+    /*var item1 = document.getElementById("todo-item1");
+    console.log(item1);
+    item1.style.color = "#AAA";
+    item1.style.textDecoration = "line-through";
+
+
+    var item2 = document.getElementById("todo-item2");
+    console.log(item2);
+    item2.style.color = "#AAA";
+    item2.style.textDecoration = "line-through";
+
+
+    var item3 = document.getElementById("todo-item3");
+    console.log(item3);
+    item3.style.color = "#AAA";
+    item3.style.textDecoration = "line-through";*/
+
+
+    //stap2: functie kan op den duur veel te veel parameters bevatten waardoor het
+    //een warboel wordt en niet meer overzichtelijk.
+    /*function markAsDone(elementid, important)
+    {
+        var item = document.getElementById(elementid);
+        item.style.color = "#AAA";
+        item.style.textDecoration = "line-through";
+
+
+        if(important == 1)
+        {
+            item.style.color = "red";
+        }   
+    }
+
+
+    markAsDone("todo-item1");
+    markAsDone("todo-item2", true);
+    markAsDone("todo-item3");*/
+
+
+    //stap3
+    //$("#todo-item1").css("color","red");
+
 
 
 
@@ -40,12 +89,25 @@
     {
         this.element = element;
 
+
+        /*if(element.length >1)
+        {
+            var isarray = true;
+        }
+        else
+        {
+            var isarray = false;
+        }*/
         //verkort if else
         this.isArray = (element.length > 1) ? true : false;
     }
 
+
+
+
     var number = 0;
-    var $ = function(p_element).
+    var $ = function(p_element)//definiëren welk object het is.
+    //p_element is het element dat gecheckt wordt op #, . of gewone tags.
     {
 
 
