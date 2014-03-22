@@ -35,42 +35,38 @@ else
     </head>
     <body>
         <div class="row">
-        <div class="col-md-8">
+            <div class="col-md-8">
+                <p id="head" class="inhoudBlokje"></p>
+            </div>
+            <div class="col-md-8">
+                <p id="locatie" class="trager"> <span id="weer"></span></p><canvas id="icoon" width="128" height="128"></canvas>
+            </div>
+		</div>
 
-        <p id="head" class="inhoudBlokje"></p>
-        <div class="col-md-8"><p id="locatie" class="trager"> <span id="weer"></span></p><canvas id="icoon" width="128" height="128"></canvas></div>
 		
-        <div class="col-md-8">	
-		</div>
-
-		</div>
-
-		<div class="dummy"></div>
-		</div>
 		<div class="row">
 			<div class="col-md-8 trager">
 				<p>Ga je binnenkort verder studeren en wil jij net als ons niets liever doen dan knappe websites, mobile apps en webapplicaties bouwen? Dan ben jij een perfecte kandidaat voor onze opleiding <a href="http://www.weareimd.be/">Interactive Multimedia Design.</a></p>
-				<br>
 			</div>
-			<div class="col-md-8 trager"><p>Kom mee een terraske doen aan onze <a href="http://www.thecreativitygym.be/">Creativity Gym</a> en neem meteen een kijkje in onze opleiding aan de Thomas More hogeschool in Mechelen.</p><br></div>
-
-			<div class="col-md-8 tragerreverted"><p>Laat je emailadres achter en we mailen de exacte datum, locatie en tijdstip naar je door.</p><br></div>
-
+			<div class="col-md-8 trager">
+                <p>Kom mee een terraske doen aan onze <a href="http://www.thecreativitygym.be/">Creativity Gym</a> en neem meteen een kijkje in onze opleiding aan de Thomas More hogeschool in Mechelen.</p>
+            </div>
+            <div class="col-md-8 tragerreverted">
+                <p>Laat je emailadres achter en we mailen de exacte datum, locatie en tijdstip naar je door.</p>
+            </div>
 		</div>
 
-<!--<form> <knop> !-->
-        <div class="dummy"></div>
+        
         </div>
             <div class="row">
 				<div class="col-md-12 trager">
-
-            <form action="#" id="form1" method="post">
-				<input type="text" name="mail" placeholder="je@email.com"><input type="submit" value="Inschrijvingen">
-			</form>
-
-				</div>
+                    <form action="#" id="form1" method="post">
+				        <input type="text" name="mail" placeholder="je@email.com"><input type="submit" value="Inschrijvingen">
+			         </form>
+                 </div>
 			</div>
 		</div>
+        
     </body>
 	
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
