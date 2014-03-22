@@ -105,49 +105,60 @@ function getWeer(summary)
 		case "clear-day":
 			$("#head").append("Een passie voor het web en apps ?<br /> Kom dan met mee een terr<span id='span'>app</span>ke doen, het is er het weer voor");
 			skycons.add(document.getElementById("icoon"), Skycons.CLEAR_DAY);
-			 $( "body" ).css("background-color", "#LightSalmon");
+			 $( "body" ).css("background-color", "Gold");
+			 $( "p").css("color","black");
+			 $( "a").css("color","black");
+			 $( "#span").css("color", "red");
 		break;
 		
 		case "clear-night":
-			$("#head").append("Tijd om te slapen.");
+			$("#head").append("Misschien doen we morgen terug een terr<span id='span'>app</span>ke");
 			skycons.add(document.getElementById("icoon"), Skycons.CLEAR_NIGHT);
-			$( "body" ).css("background-color", "#Navy");
+			$( "body" ).css("background-color", "Navy");
 		break;
 		
 		case "rain":
-			$("#head").append("Na regen komt zonneschijn!");
+			$("#head").append("Misschien doen we later terug een terr<span id='span'>app</span>ke, als het gedaan is met regenen");
 			skycons.add(document.getElementById("icoon"), Skycons.RAIN);
-			$( "body" ).css("background-color", "#5742ad");
+			$( "body" ).css("background-color", "CornFlowerBlue");
+			//$skycons({"color" : "black"});
+			
 		break;
 		
 		case "snow":
-			$("#head").append("Lekker rollebollen in de sneeuw!");
+			$("#head").append("Kom gerust langs voor een sneeuwgevecht, maar voor een terr<span id='span'>app</span>ke is het nu een beetje koud.");
 			skycons.add(document.getElementById("icoon"), Skycons.SNOW);
-			$( "body" ).css("background-color", "#f2cbee");
+			$( "body" ).css("background-color", "LightBlue");
+			$( "p").css("color","black");
+			$( "a").css("color","black");
+			$( "#span").css("color", "red");
 		break;
 		
 		case "sleet":
-			$("#head").append('Pas op voor slippertjes!');
+			$("#head").append("Vandaag is het wat te koud voor een terr<span id='span'>app</span>ke, misschien morgen?");
 			skycons.add(document.getElementById("icoon"), Skycons.SLEET)
-			 $( "body" ).css("background-color", "#575757");
+			 $( "body" ).css("background-color", "LightBlue");
 		break;
 		
 		case "wind":
-			$("#head").append("Er waait een frisse wind, doe een trui of een jas aan.");
+			$("#head").append("Kleed je warm aan want er is veel wind, en kom dan voor een terr<span id='span'>app</span>ke");
 			skycons.add(document.getElementById("icoon"), Skycons.WIND);
-			 $( "body" ).css("background-color", "#54392f");
+			 $( "body" ).css("background-color", "DarkGrey");
 		break;
 		
 		case "fog":
-			$("#head").append("Kijk uit je doppen, het is mistig!");
+			$("#head").append("Misschien doen we morgen terug een terr<span id='span'>app</span>ke, nu gaan we nogal weinig zien.");
 			skycons.add(document.getElementById("icoon"), Skycons.FOG);
-			$( "body" ).css("background-color", "#9aa299");
+			$( "body" ).css("background-color", "Silver");
+			$( "p").css("color","black");
+			$( "a").css("color","black");
+			$( "#span").css("color", "red");
 		break;
 		
 		case "cloudy":
-			$("#head").append("Wolken in zicht, neem een trui of een jas mee.");
+			$("#head").append("Het zonnetje wil er niet door komen, neem toch maar een jas of trui mee voor een terr<span id='span'>app</span>ke");
 			skycons.add(document.getElementById("icoon"), Skycons.CLOUDY);
-			$( "body" ).css("background-color", "#39445c");
+			$( "body" ).css("background-color", "SkyBlue");
 		break;
 		
 		case "partly-cloudy-day":
@@ -160,15 +171,15 @@ function getWeer(summary)
 		break;
 		
 		case "partly-cloudy-night":
-			$("#head").append("Lekker slapen!");
+			$("#head").append("Misschien doen we morgen terug een terr<span id='span'>app</span>ke");
 			skycons.add(document.getElementById("icoon"), Skycons.PARTLY_CLOUDY_NIGHT);
-			$( "body" ).css("background-color", "#0b0b22");
+			$( "body" ).css("background-color", "SteelBlue");
 		break;
 		
 		default:
 			$("#head").append("Tijd om een terrapke te doen!");
 			skycons.add(document.getElementById("icoon"), Skycons.CLEAR_DAY);
-			$( "body" ).css("background-color", "#48d94f");
+			$( "body" ).css("background-color", "Orange");
 
 		break;
 		break;
