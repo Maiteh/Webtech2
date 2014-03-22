@@ -155,6 +155,8 @@ function getWeer(summary)
 			skycons.add(document.getElementById("icoon"), Skycons.PARTLY_CLOUDY_DAY);
 			$( "body" ).css("background-color", "PowderBlue");
 			$( "p").css("color","black");
+			$( "a").css("color","black");
+			$( "#span").css("color", "red");
 		break;
 		
 		case "partly-cloudy-night":
@@ -167,6 +169,7 @@ function getWeer(summary)
 			$("#head").append("Tijd om een terrapke te doen!");
 			skycons.add(document.getElementById("icoon"), Skycons.CLEAR_DAY);
 			$( "body" ).css("background-color", "#48d94f");
+
 		break;
 		break;
 	}
