@@ -18,7 +18,7 @@ else
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Terrapke doen?</title>
+        <title>Terrapke</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="Demo project with jQuery">
