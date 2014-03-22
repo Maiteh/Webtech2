@@ -122,7 +122,6 @@ function getWeer(summary)
 			skycons.add(document.getElementById("icoon"), Skycons.RAIN);
 			$( "body" ).css("background-color", "CornFlowerBlue");
 			//$skycons({"color" : "black"});
-			
 		break;
 		
 		case "snow":
