@@ -5,12 +5,6 @@ jQuery(function()
 
   var skycons = new Skycons({"color": "white"});
 
-$(function() 
-{
-    FastClick.attach(document.body);
-    console.log("FastClick werkt");
-});
-
     var huidigePositie = '';
     var jsonResponse = '';
     var locatieResponse = '';
@@ -51,19 +45,19 @@ $(function()
             var Seconds_from_T1_to_T2 = dif / 1000;
             var Seconds_Between_Dates = Math.abs(Seconds_from_T1_to_T2);
 
-        if( Seconds_Between_Dates >= 3600)
-		{
-			console.log("Weer update nodig");
-            var nu = new Date().getTime();
-            doAjax();
-        }
-		else
-		{
-            console.log("Geen weerupdate nodig");
-            gebruikResponse(JSON.parse(jsonResponse));
-        }
-	}
+        	if( Seconds_Between_Dates >= 3600)
+			{
+				console.log("Weer update nodig");
+        	    var nu = new Date().getTime();
+       		     doAjax();
+        	}
+			else
+			{
+        	    console.log("Geen weerupdate nodig");
+        	    gebruikResponse(JSON.parse(jsonResponse));
+        	}
 		}
+	}
 
     function error()
 	{
@@ -80,7 +74,6 @@ function doAjax()
     global: true,
     dataType: 'jsonp',
     })
-	
         .done(function () 
 		{
             console.log("success");
@@ -195,9 +188,6 @@ function gebruikResponse(jsonResponse)
 	var seconds = date.getSeconds();
 	var formattedTime = hours + ':' + minutes + ':' + seconds;
     var conditie = jsonResponse.currently.icon;
-   // getIcon(conditie);
-   // getColor(conditie);
     $("#weer").append(Math.round(jsonResponse.currently.temperature) + '°C');
     getWeer(conditie);
-    $("#forecast").append('<div class="dummy"></div>');
 }
