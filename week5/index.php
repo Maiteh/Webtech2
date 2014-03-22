@@ -24,7 +24,7 @@ else
         <meta name="description" content="Demo project with jQuery">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,8 +74,8 @@ else
     </body>
 	
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script type='application/javascript' src='scripts/fastclick.js'></script>
-    <script src="scripts/skycons.js"></script>
-    <script src="scripts/nprogress.js"></script>
-    <script src="scripts/app.js"></script>
+    <script type='application/javascript' src='js/fastclick.js'></script>
+    <script src="js/skycons.js"></script>
+    <script src="js/nprogress.js"></script>
+    <script src="js/app.js"></script>
 </html>
