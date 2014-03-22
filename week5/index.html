@@ -24,27 +24,12 @@
 
 
 <div class="row">
-<<<<<<< HEAD
-  <div class="col-md-1" id="weer">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-=======
   <div class="col-md-12" id="header"></div>
->>>>>>> update versie
 </div>
 
 <div class="row">
   <div class="col-md-3" ><p id="weer"> </p></div>
-  <div class="col-md-1"><canvas id="icoon"></canvas></div>
+  <div class="col-md-1"><img id="icoon"/></div>
   
 </div>
 <div class="row">
@@ -67,56 +52,7 @@
 
   <script type="text/javascript">
 
-  <script type="text/javascript">
 
-
-    //GEOLOCATION
-    var latitude;
-    var longitude;
-
-    navigator.geolocation.getCurrentPosition(success, error);
-
-    function success(pos) {
-      var crd = pos.coords;
-    
-      latitude = crd.latitude;
-      longitude = crd.longitude;
-
-      apiConnection();
-    };
-
-    function error(err) {
-        console.warn('ERROR(' + err.code + '): ' + err.message);
-    };
-
-
-    //API RAADPLEGEN
-function apiConnection(){
-
-    var jqxhr = $.ajax({
-      url: "https://api.forecast.io/forecast/a599b1c2ef494d38f43dc128640af340/"+latitude+","+longitude,
-      dataType: "jsonp",
-      type: 'GET',
-      })
-      .done(function() {
-      var temp = (jqxhr.responseJSON.currently.temperature -32)/1.8;
-      temp = Math.round(temp);
-      document.getElementById('weer').innerHTML = temp;
-
-      })
-      .fail(function() {
-      alert( "error" );
-      })
-      .always(function() {
-      alert( "complete" );
-    });
-
-    }
-
-
-
-
-  </script>
 
 
     //GEOLOCATION
@@ -166,9 +102,8 @@ function apiConnection(){
         switch(icon){
                 case "clear-day":
                 ico.src="http://www.iconsdb.com/icons/preview/white/sun-xxl.png";
-                $(icoon).addClass("zon");
                 document.body.style.background='red';
-                head.innerHTML= "<h1>Een passie voor het web en apps ?<br /> Kom dan met mee een terr<span id='span'>app</span>ke doen</h1>";
+                head.innerHTML= "<h1>Een passie voor het web en apps ?<br /> Kom dan met mee een terr<span id='span'>app</span>ke doen, het is er het weer voor</h1>";
                 break;
 
                 case "clear-night":
@@ -178,10 +113,9 @@ function apiConnection(){
                 break;
 
                 case "partly-cloudy-day":
-                ico.setAttribute("id","partly-cloudy-day");
+                ico.src="http://www.iconsdb.com/icons/preview/white/partly-cloudy-day-xxl.png";
                  document.body.style.background='Khaki';
-                 head.innerHTML= "<h1>Een passie voor het web en apps ?<br /> Kom dan met mee een terr<span id='span'>app</span>ke doen</h1>";
-                 //ico.setAttribute("class","zon");
+                 head.innerHTML= "<h1>Een passie voor het web en apps ?<br /> Kom dan met mee een terr<span id='span'>app</span>ke doen, die wolkjes houden ons toch niet tegen </h1>";
                 break;
 
                 case "partly-cloudy-night":
@@ -193,8 +127,15 @@ function apiConnection(){
                 case "wind":
                 ico.src="http://www.iconsdb.com/icons/preview/white/little-rain-xxl.png";
                  document.body.style.background='LightBlue';
-                 head.innerHTML= "<h1>Misschien doen we morgen terug een terr<span id='span'>app</span>ke</h1>";
+                 head.innerHTML= "<h1>Een passie voor het web en apps ?<br /> Kom dan met mee een terr<span id='span'>app</span>ke doen, neem wel een truitje mee voor de wind</h1>";
                 break;
+
+                case "rain":
+                document.body.style.background='CadetBlue ';
+                 head.innerHTML="<h1>Na regen komt zonneschijn! We gaan nog even wachten met een terr<span id='span'>app</span>ke te doen</h1>";
+                break;
+    
+  
 
                 default:
                 ico.src="http://www.iconsdb.com/icons/preview/white/clouds-xxl.png";
@@ -219,7 +160,6 @@ function apiConnection(){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/skycons.js"></script>
   </body>
 </html>
 
