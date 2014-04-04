@@ -51,3 +51,8 @@ input, textarea
 {
 	background-color: #ebedee;
 }
+#questions li span
+{
+	color: #333;
+	font-weight: bold;
+}
