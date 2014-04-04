@@ -1,13 +1,15 @@
 
-/**
+//**
  * Module dependencies.
  */
 
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var message = require('./routes/message');
 var http = require('http');
 var path = require('path');
+var faye = require('faye');
 
 var app = express();
 
@@ -30,10 +32,11 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-//app.get('/ask', ask.index);
-//app.get('/allquestions', ask.list);
+app.get('/ask', message.index);
 
+// Faye
+var server = http.createServer(app);
+var bayeux = new faye.NodeAdapter({mount: '/faye', timeout: 45});
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+bayeux.attach(server);
+server.listen(app.get('port'));
