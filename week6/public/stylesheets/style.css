@@ -23,3 +23,21 @@ form
 	float: left;
 	width: 50%;
 }
+label, input, textarea
+{
+	display: block;
+	width: 100%;
+}
+
+input, textarea
+{
+	margin: 5px 0 10px;
+	padding: 6px 5px;
+}
+
+#questions ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0 20px 0 0;
+}
