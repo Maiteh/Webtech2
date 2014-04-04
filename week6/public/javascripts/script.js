@@ -7,3 +7,12 @@ client.subscribe('/ask', function(message)
 
 $('#send').click(sendMessage);
 
+$(document).keypress(function(e) 
+{
+    if(e.which == 13)
+    {
+    	e.preventDefault();
+    	sendMessage();
+    }
+})
+
