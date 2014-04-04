@@ -22,4 +22,12 @@ function sendMessage(e)
 	var question = $('#question').val();
 	var message = [name, question];
 
-	});
+	// validate
+	if(name && question) 
+	{
+		client.publish('/ask', {text: message});
+	};
+
+	// Clear fields
+	$('#name, #question').val("");
+}
