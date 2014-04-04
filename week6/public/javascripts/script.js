@@ -16,3 +16,10 @@ $(document).keypress(function(e)
     }
 })
 
+function sendMessage(e) 
+{
+	var name = $('#name').val();
+	var question = $('#question').val();
+	var message = [name, question];
+
+	});
