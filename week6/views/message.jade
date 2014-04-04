@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div.container
+    h1= title
+    div#questions
+      ul
+    form
+      label Name:
+      input(type="text", id="name")
+      label Question:
+      textarea(rows="5", id="question")
+      input(type="button", value="send", id="send")
