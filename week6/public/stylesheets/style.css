@@ -47,3 +47,7 @@ input, textarea
 	color: #999;
 	padding: 15px 12px;
 }
+#questions li:nth-child(even)
+{
+	background-color: #ebedee;
+}
