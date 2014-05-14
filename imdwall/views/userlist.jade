@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    ul(id="navigation")
+      li(class="nav")
+        a(href="/") Index
+      li(class="nav")
+        a(href="newuser" class="active") Ask
+      li(class="nav")
+        a(href="userlist") Questions
+    h1.
+        All Questions
+    ul
+        each user, i in userlist
+            li(class="quests")
+                b= user.name
+                p= user.question
+                p= user.type
+                p(class="vote")= user.votes

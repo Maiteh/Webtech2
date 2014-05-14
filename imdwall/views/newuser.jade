@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    ul(id="navigation")
+      li(class="nav")
+        a(href="/") Index
+      li(class="nav")
+        a(href="newuser" class="active") Ask
+      li(class="nav")
+        a(href="userlist") Questions
+    h1 Add a new question/awnser
+    form(name="adduser",method="post",action="/add")
+        input(type="text", placeholder="name", name="name")
+        input#questionfill(type="text", placeholder="question", name="question")
+        ul
+          li(class="radio")
+            label(for='type') Question
+            input(type="radio",id="checkq", name="type", value="question")
+          li(class="radio")
+            label(for='type') Awnser
+            input(type="radio", id="checka", name="type", value="awnser")
+        
+        button#button(type="submit") submit
